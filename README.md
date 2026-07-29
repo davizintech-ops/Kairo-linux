@@ -19,7 +19,7 @@ Kairo Linux é uma distribuição Linux leve baseada em Debian, criada para comp
 
 As versões podem ser encontradas em:
 
-- **Releases:** https://github.com/SEU_USUARIO/Kairo-Linux/releases
+- **Releases:** https://github.com/davizintech-ops/Kairo-Linux/releases
 
 ## 📋 Requisitos
 
