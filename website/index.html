@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Kairo Linux</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,Arial,sans-serif;
+}
+
+body{
+
+background:#0D1117;
+color:white;
+
+}
+
+header{
+
+position:fixed;
+top:0;
+width:100%;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:20px 60px;
+
+background:rgba(13,17,23,.7);
+
+backdrop-filter:blur(15px);
+
+z-index:100;
+
+}
+
+header a{
+
+color:white;
+
+text-decoration:none;
+
+margin-left:30px;
+
+}
+
+.hero{
+
+height:100vh;
+
+background:
+
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.65)),
+url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+padding:30px;
+
+}
+
+.hero h1{
+
+font-size:70px;
+
+}
+
+.hero p{
+
+margin-top:20px;
+
+font-size:22px;
+
+color:#ddd;
+
+}
+
+button{
+
+margin-top:40px;
+
+padding:15px 40px;
+
+font-size:18px;
+
+border:none;
+
+border-radius:12px;
+
+background:#3B82F6;
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:translateY(-3px);
+
+background:#60A5FA;
+
+}
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:80px 20px;
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+margin-top:40px;
+
+}
+
+.card{
+
+background:#161B22;
+
+padding:30px;
+
+border-radius:20px;
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.requirements{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:30px;
+
+margin-top:40px;
+
+}
+
+.req{
+
+background:#161B22;
+
+padding:25px;
+
+border-radius:20px;
+
+}
+
+footer{
+
+padding:50px;
+
+text-align:center;
+
+background:#111;
+
+margin-top:80px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h2>Kairo Linux</h2>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="downloads.html">Downloads</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div>
+
+<h1>Kairo Linux</h1>
+
+<p>
+
+Light. Fast. Reliable.
+
+</p>
+
+<button onclick="location.href='https://github.com/davizintech-ops/Kairo-Linux/releases/latest'">
+
+Download
+
+</button>
+
+</div>
+
+</section>
+
+<div class="container">
+
+<h1>Features</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>🐧 Debian Based</h2>
+
+<p>
+Stable and lightweight.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>⚡ Fast</h2>
+
+<p>
+Optimized for old hardware.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>📦 Live ISO</h2>
+
+<p>
+Boot without installing.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>❤️ Open Source</h2>
+
+<p>
+Community driven.
+</p>
+
+</div>
+
+</div>
+
+<h1 style="margin-top:80px">
+
+System Requirements
+
+</h1>
+
+<div class="requirements">
+
+<div class="req">
+
+<h2>Minimum</h2>
+
+<br>
+
+CPU: i686
+
+<br><br>
+
+RAM: 512 MB
+
+<br><br>
+
+Storage: 2 GB
+
+<br><br>
+
+Boot: BIOS
+
+</div>
+
+<div class="req">
+
+<h2>Recommended</h2>
+
+<br>
+
+CPU: Dual Core
+
+<br><br>
+
+RAM: 2 GB
+
+<br><br>
+
+Storage: 10 GB
+
+<br><br>
+
+SSD Recommended
+
+</div>
+
+</div>
+
+<h1 style="margin-top:80px">
+
+Latest Release
+
+</h1>
+
+<div class="card">
+
+<h2>v0.1-alpha</h2>
+
+<br>
+
+<p>
+
+First public version of Kairo Linux.
+
+</p>
+
+<br>
+
+<button onclick="location.href='downloads.html'">
+
+Download ISO
+
+</button>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 Davizin Tech
+
+</footer>
+
+</body>
+  </html>
