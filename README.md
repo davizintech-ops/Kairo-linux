@@ -1,9 +1,8 @@
 ![Kairo Linux Logo](Picsart_26-07-29_22-27-30-347.png)
 
-=======
-Kairo Linux
+---
 
-"Kairo Linux" (logo.png)
+## Kairo Linux
 
 Kairo Linux é uma distribuição Linux leve criada para oferecer desempenho, simplicidade e controle. O projeto foi desenvolvido como uma base Linux otimizada, focada em rodar bem até em dispositivos com recursos limitados.
 
