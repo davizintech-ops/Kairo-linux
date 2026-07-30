@@ -33,17 +33,9 @@ O Kairo Linux possui ferramentas próprias para construir o sistema:
 ```build
 git clone https://github.com/davizintech-ops/Kairo-Linux.git
 cd Kairo-Linux
-./build.sh
 ```
 # aviso com a build!⚠️
 só tem infelizmente um script funcionando, dps eu faço mais
-
-O processo de build gera componentes como:
-
-- Root filesystem
-- Pacotes básicos
-- Imagens de teste
-- Arquivos de boot
 
 ## 💻 Arquiteturas planejadas
 
