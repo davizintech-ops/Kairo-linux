@@ -1,0 +1,10 @@
+bash
+coreutils
+systemd
+linux-image-686-pae
+grub-pc-bin
+grub-common
+squashfs-tools
+xorriso
+isolinux
+syslinux

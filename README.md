@@ -1,51 +1,32 @@
-# Kairo Linux
+=======
+# Kairo Source
 
-![Version](https://img.shields.io/badge/version-0.1-blue)
-![Architecture](https://img.shields.io/badge/arch-i686-orange)
-![Kernel](https://img.shields.io/badge/kernel-Linux%206.1-green)
+Official source repository of Kairo Linux.
 
-Kairo Linux é uma distribuição Linux leve baseada em Debian, criada para computadores antigos, máquinas virtuais e experimentos.
+## Features
 
-## ✨ Recursos
+- Debian Based
+- Lightweight
+- Live ISO
+- i686 Support
+- Open Source
 
-- 🐧 Base Debian
-- 💻 Arquitetura i686 (32 bits)
-- 🚀 Leve e rápida
-- 📦 Sistema Live
-- 🔧 Fácil de modificar
-- 🖥️ Compatível com máquinas virtuais
+## Build
 
-## 📥 Download
+```bash
+chmod +x build.sh
+./build.sh
+```
 
-As versões podem ser encontradas em:
+## Repository Structure
 
-- **Releases:** https://github.com/davizintech-ops/Kairo-Linux/releases
+- build/
+- overlay/
+- packages/
+- iso/
+- docs/
+- website/
 
-## 📋 Requisitos
+## License
 
-| Componente | Mínimo |
-|------------|---------|
-| CPU | i686 |
-| RAM | 512 MB |
-| Disco | 2 GB |
-| Boot | BIOS |
-
-## 🚀 Como iniciar
-
-1. Baixe a ISO.
-2. Grave em um pendrive ou utilize uma máquina virtual.
-3. Inicialize pelo dispositivo.
-
-## 📸 Capturas de tela
-
-Em breve.
-
-## 🛠️ Desenvolvimento
-
-Projeto criado por **Davizin Tech**.
-
-Contribuições são bem-vindas!
-
-## 📄 Licença
-
-Em definição.
+GPL-3.0
