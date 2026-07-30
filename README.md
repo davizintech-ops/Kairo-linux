@@ -1,5 +1,7 @@
+![Kairo Linux Logo](assets/icon.png)
+
 =======
-# Kairo Source
+# Kairo Linux
 
 Official source repository of Kairo Linux.
 
