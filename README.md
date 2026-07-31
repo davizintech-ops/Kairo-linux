@@ -1,4 +1,4 @@
-![Kairo Linux Logo](Picsart_26-07-29_22-27-30-347.png)
+![Kairo Linux Logo](logo.png)
 
 ---
 
