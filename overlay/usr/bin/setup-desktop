@@ -1,0 +1,26 @@
+#!/bin/bash
+
+echo "Kairo Linux setup-desktop v1"
+
+install_mate() {
+	apt install mate lightdm -y
+}
+
+install_xfce() {
+	apt install xfce lightdm -y
+}
+
+echo "Select a environment"
+echo "1) MATE: Lightweight, based on GNOME 2"
+echo "2) Xfce: Lightweight"
+
+read -e -p "Select a option: " opt
+
+case "$opt" in
+	1|mate|MATE|matede|MATEDE|Mate|MATEde)
+	 install_mate
+	  ;;
+	2|xfce|XFCE|xfcede|XFCEDE|Xfce|MATEde)
+	 install_xfce
+	  ;;
+esac

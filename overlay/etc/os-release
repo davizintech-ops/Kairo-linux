@@ -1,5 +1,6 @@
 NAME="Kairo Linux"
 ID=kairo
+ID_LIKE=debian
 PRETTY_NAME="Kairo Linux v0.1 Alpha"
 VERSION="0.1 Alpha"
 VERSION_ID="0.1"
