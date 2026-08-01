@@ -52,6 +52,16 @@ Pode ser executado em:
 - Limbo PC Emulator
 - Máquinas físicas compatíveis
 
+## ✨ Novidades 
+
+mudamos de **site!**
+se quiser ver o novo é:
+https://kairo-linux.loca.lt/
+
+**como ficou:**
+* saímos do host do Github e foi para próprio host
+* usamos tv box com Linux para isso
+
 ## 📜 Licença
 
 A licença do projeto será definida pelo mantenedor.
