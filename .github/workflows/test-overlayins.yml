@@ -2,6 +2,8 @@ name: Test Overlay Install
 
 on:
   push:
+    paths:
+      - "install_overlay.sh"
   workflow_dispatch:
 
 jobs:
@@ -24,30 +26,44 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install dependencies
+      - name: Install rsync
         run: |
           sudo apt update
           sudo apt install -y rsync
 
-      - name: Run install_overlay.sh and save log
+      - name: Run install_overlay.sh
         run: |
           mkdir -p actions/test-overlayins.yml.log.d
 
-          LOG="actions/test-overlayins.yml.log.d/$(date +'%Y-%m-%d_%H-%M-%S').log"
+          case "$(uname -m)" in
+            x86_64)
+              ARCH="amd64"
+              ;;
+            aarch64|arm64)
+              ARCH="arm64"
+              ;;
+            *)
+              ARCH="$(uname -m)"
+              ;;
+          esac
 
-          echo "Running install_overlay.sh"
-          echo "Log file: $LOG"
+          UBUNTU_VERSION="$(lsb_release -rs)"
+
+          LOG="actions/test-overlayins.yml.log.d/$(date +'%Y-%m-%d_%H-%M-%S')-${ARCH}.log"
+
+          echo "Testing on Ubuntu (${UBUNTU_VERSION}) (${ARCH})" | tee "${LOG}"
+          echo "----------------------------------------" | tee -a "${LOG}"
 
           chmod +x ./install_overlay.sh
 
-          ./install_overlay.sh 2>&1 | tee "$LOG"
+          ./install_overlay.sh 2>&1 | tee -a "${LOG}"
 
       - name: Configure GitHub Actions identity
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Commit logs and changes
+      - name: Commit logs
         run: |
           git add actions/test-overlayins.yml.log.d
 
@@ -56,8 +72,8 @@ jobs:
             exit 0
           fi
 
-          git commit -m "Add overlay install test log ($(date +'%Y-%m-%d %H:%M:%S'))"
+          git commit -m "Add overlay install test log"
 
-      - name: Push changes
+      - name: Push commit
         run: |
           git push origin HEAD:${GITHUB_REF_NAME}
