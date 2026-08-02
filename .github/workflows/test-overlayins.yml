@@ -2,8 +2,6 @@ name: Test Overlay Install
 
 on:
   push:
-    paths:
-      - "install_overlay.sh"
   workflow_dispatch:
 
 jobs:
