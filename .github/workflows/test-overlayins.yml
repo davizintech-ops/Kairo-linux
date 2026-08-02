@@ -2,6 +2,8 @@ name: Test Overlay Install
 
 on:
   push:
+    paths:
+      - "install_overlay.sh"
   workflow_dispatch:
 
 jobs:
@@ -9,20 +11,19 @@ jobs:
     name: Overlay install (${{ matrix.runner }})
     runs-on: ${{ matrix.runner }}
 
-    permissions:
-      contents: write
-
     strategy:
       matrix:
         runner:
+          - ubuntu-22.04
+          - ubuntu-22.04-arm
+          - ubuntu-24.04
+          - ubuntu-24.04-arm
           - ubuntu-26.04
           - ubuntu-26.04-arm
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install rsync
         run: |
@@ -56,22 +57,58 @@ jobs:
 
           sudo ./install_overlay.sh 2>&1 | tee -a "${LOG}"
 
+      - name: Upload log
+        uses: actions/upload-artifact@v4
+        with:
+          name: overlay-log-${{ matrix.runner }}
+          path: actions/test-overlayins.yml.log.d/
+
+
+  commit-logs:
+    name: Commit test logs
+    needs: overlay-install
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download logs
+        uses: actions/download-artifact@v4
+        with:
+          path: actions/test-overlayins.yml.log.d/
+
+      - name: Merge logs
+        run: |
+          mkdir -p actions/test-overlayins.yml.log.d
+
+          find actions/test-overlayins.yml.log.d -type f -exec mv {} actions/test-overlayins.yml.log.d/ \; || true
+
       - name: Configure GitHub Actions identity
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Pull latest changes
+        run: |
+          git pull --rebase origin "${GITHUB_REF_NAME}"
 
       - name: Commit logs
         run: |
           git add actions/test-overlayins.yml.log.d
 
           if git diff --cached --quiet; then
-            echo "No changes to commit"
+            echo "No changes"
             exit 0
           fi
 
-          git commit -m "Add overlay install test log"
+          git commit -m "Add overlay install test logs"
 
-      - name: Push commit
+      - name: Push logs
         run: |
           git push origin HEAD:${GITHUB_REF_NAME}
