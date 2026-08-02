@@ -54,7 +54,7 @@ jobs:
 
           chmod +x ./install_overlay.sh
 
-          ./install_overlay.sh 2>&1 | tee -a "${LOG}"
+          sudo ./install_overlay.sh 2>&1 | tee -a "${LOG}"
 
       - name: Configure GitHub Actions identity
         run: |
