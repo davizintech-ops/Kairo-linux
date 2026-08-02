@@ -54,13 +54,13 @@ Pode ser executado em:
 
 ## ✨ Novidades 
 
-mudamos de **site!**
-se quiser ver o novo é:
-https://kairo-linux.loca.lt/
-
-**como ficou:**
+* mudamos de **site!**
+* adicionado site de fóruns, clique [aqui](https://kairo-linux.loca.lt/forums.html) para ver
 * saímos do host do Github e foi para próprio host
 * usamos tv box com Linux para isso
+
+
+link para baixar kairo: https://kairo-linux.loca.lt/
 
 ## 📜 Licença
 
