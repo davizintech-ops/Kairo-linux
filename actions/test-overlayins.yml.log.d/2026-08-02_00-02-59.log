@@ -1,0 +1,30 @@
+sending incremental file list
+rsync: [generator] chgrp "/etc/." failed: Operation not permitted (1)
+rsync: [generator] delete_file: unlink(os-release) failed: Permission denied (13)
+could not make way for new regular file: os-release
+./
+hostname
+hosts
+issue
+kairo_release
+motd
+rsync: [receiver] mkstemp "/etc/.hostname.C57xji" failed: Permission denied (13)
+rsync: [receiver] mkstemp "/etc/.hosts.1pzu2K" failed: Permission denied (13)
+rsync: [receiver] mkstemp "/etc/.issue.QSWksz" failed: Permission denied (13)
+rsync: [receiver] mkstemp "/etc/.kairo_release.M0uZ3v" failed: Permission denied (13)
+rsync: [receiver] mkstemp "/etc/.motd.OyD3pV" failed: Permission denied (13)
+
+sent 493 bytes  received 114 bytes  1,214.00 bytes/sec
+total size is 420  speedup is 0.69
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1356) [sender=3.2.7]
+sending incremental file list
+rsync: [generator] chgrp "/usr/." failed: Operation not permitted (1)
+./
+rsync: [generator] chgrp "/usr/bin" failed: Operation not permitted (1)
+bin/
+bin/setup-desktop
+rsync: [receiver] mkstemp "/usr/bin/.setup-desktop.oB3S4S" failed: Permission denied (13)
+
+sent 600 bytes  received 46 bytes  1,292.00 bytes/sec
+total size is 429  speedup is 0.66
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1356) [sender=3.2.7]
