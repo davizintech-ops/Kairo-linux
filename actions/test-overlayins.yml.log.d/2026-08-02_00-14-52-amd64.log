@@ -1,0 +1,20 @@
+Testing on Ubuntu (26.04) (amd64)
+----------------------------------------
+sending incremental file list
+./
+hostname
+hosts
+issue
+kairo_release
+motd
+os-release
+
+sent 853 bytes  received 133 bytes  1,972.00 bytes/sec
+total size is 420  speedup is 0.43
+sending incremental file list
+./
+bin/
+bin/setup-desktop
+
+sent 600 bytes  received 46 bytes  1,292.00 bytes/sec
+total size is 429  speedup is 0.66
